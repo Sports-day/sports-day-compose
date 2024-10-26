@@ -1,7 +1,6 @@
-version: "3.8"
 services:
   backend:
-    image: ghcr.io/sports-day/sportsdayapi:v1.1.0
+    image: ghcr.io/sports-day/sportsdayapi:main
     restart: always
     environment:
       - TZ=Asia/Tokyo
@@ -16,7 +15,7 @@ services:
     depends_on:
       - database
   database:
-    image: mariadb:latest
+    image: mariadb:lts-jammy
     volumes:
       - ./mariadb:/var/lib/mysql
     restart: always
